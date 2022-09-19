@@ -40,3 +40,47 @@ const propmtArr = [
     'Exit'
 ]
 
+startPrompt = function () {
+
+    inquirer.prompt({
+        type: 'list',
+        name: 'action',
+        message: 'What would you like to do?',
+        choices: promptArr
+    })
+    .then (({ action }) => {
+        switch (action) {
+            case 'View departments':
+                showDepartments();
+                break;
+
+            case 'View roles':
+                viewRoles();
+                break;
+
+            case 'View employees':
+                viewEmployees();
+                break;
+
+            case 'Add a department':
+                addDepartment();
+                break;
+
+            case 'Add a role':
+                roleParams();
+                break;
+
+            case 'Add an employee':
+                newEmployeePrompt();
+                break;
+
+            case 'Update an employee role':
+                chooseEmployee();
+                break;
+
+            case 'Exit':
+                console.log('Bye!');
+                process.exit();
+        }
+    });
+};
