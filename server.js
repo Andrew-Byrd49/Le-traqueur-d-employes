@@ -1,6 +1,5 @@
 const db = require('./db/connection');
 const inquirer = require('inquirer');
-const cTable = require('console.table');
 
 const {
     showDepartments,
@@ -11,7 +10,7 @@ const {
     viewEmployees,
     newEmployeePrompt,
     chooseEmployee
-} = require('./lib/Employees');
+} = require('./lib/Employee');
 
 const {
     viewRoles,
@@ -29,7 +28,7 @@ db.connect((err) => {
     startPrompt();
 });
 
-const propmtArr = [
+const promptArr = [
     'View departments',
     'View roles',
     'View employees',
